@@ -169,7 +169,7 @@ def ventana_nuevo_cliente(parent, callback):
             genero=entradas["genero"].get() or None,
             peso=peso or 0,
             altura=altura or 0,
-            grasa=grasa or 0,
+            grasa_corporal=grasa or 0,
             objetivo=entradas["objetivo"].get() or None,
             notas=entradas["notas"].get() or None
         )
@@ -317,7 +317,7 @@ def ventana_editar_cliente(parent, cliente_id, callback):
             genero=entradas["genero"].get() or None,
             peso=peso or 0,
             altura=altura or 0,
-            grasa=grasa or 0,
+            grasa_corporal=grasa or 0,
             objetivo=entradas["objetivo"].get() or None,
             notas=entradas["notas"].get() or None
         )

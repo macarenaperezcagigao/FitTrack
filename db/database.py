@@ -9,7 +9,6 @@ def crear_tablas():
     conexion = sqlite3.connect(RUTA_DB)
     cursor = conexion.cursor()
     
-    # TABLA 1: CLIENTES (YA EXISTE)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS clientes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,11 +22,11 @@ def crear_tablas():
             grasa_corporal REAL,
             objetivo TEXT,
             notas TEXT,
-            fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            activo INTEGER DEFAULT 1,
+            fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     """)
     
-    # TABLA 2: PROGRESO (Seguimiento de evolución)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS progreso (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -46,7 +45,6 @@ def crear_tablas():
         )
     """)
     
-    # TABLA 3: RUTINAS (Rutinas de entrenamiento)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS rutinas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -59,7 +57,6 @@ def crear_tablas():
         )
     """)
     
-    # TABLA 4: EJERCICIOS (Ejercicios dentro de rutinas)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS ejercicios (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -73,7 +70,6 @@ def crear_tablas():
         )
     """)
     
-    # TABLA 5: SESIONES (Historial de entrenamientos)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS sesiones (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
